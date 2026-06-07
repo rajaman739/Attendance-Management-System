@@ -8,7 +8,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/predictions")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "https://attendance-management-system-pink.vercel.app"
+})
 public class AttendancePredictionController {
 
     private final AttendancePredictionService attendancePredictionService;

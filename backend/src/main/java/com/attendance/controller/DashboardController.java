@@ -11,7 +11,11 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/dashboard")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "https://attendance-management-system-pink.vercel.app"
+})
 public class DashboardController {
 
     private final StudentRepository studentRepository;

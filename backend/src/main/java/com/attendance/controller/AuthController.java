@@ -10,7 +10,11 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "https://attendance-management-system-pink.vercel.app"
+})
 public class AuthController {
 
     private final AuthService authService;
