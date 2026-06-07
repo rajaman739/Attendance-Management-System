@@ -1,12 +1,43 @@
-# Attendance Management System
+🎓 Attendance Management System
 
 ## Overview
 
 The Smart Attendance Management System is a full-stack web application developed to automate attendance management in educational institutions.
 
+It's an AI-Powered Attendance Management System built using React, Spring Boot, TiDB Cloud (MySQL), JWT Authentication, and OpenCV Face Recognition.
+
 The system provides modules for student management, faculty management, subject management, attendance tracking, attendance analytics, attendance prediction, report generation, and face-recognition-based attendance marking.
 
-The project uses Spring Boot for backend services, ReactJS for frontend development, MySQL as the database, and Python OpenCV for face recognition.
+
+---
+
+# 🚀 Live Deployment
+
+## Frontend (Vercel)
+
+https://attendance-management-system-pink.vercel.app
+
+## Backend API (Render)
+
+https://attendance-backend-0sk5.onrender.com
+
+## Swagger Documentation
+
+https://attendance-backend-0sk5.onrender.com/swagger-ui/index.html
+
+## Live Demo
+
+Frontend:
+https://attendance-management-system-pink.vercel.app
+
+Backend:
+https://attendance-backend-0sk5.onrender.com
+
+## Demo Login
+
+Email: admin@test.com
+
+Password: admin123
 
 ---
 
@@ -17,6 +48,7 @@ The project uses Spring Boot for backend services, ReactJS for frontend developm
 * JWT-Based Login
 * User Registration
 * Secure API Access
+* Protected Routes
 
 ## Student Management
 
@@ -24,8 +56,7 @@ The project uses Spring Boot for backend services, ReactJS for frontend developm
 * Update Student
 * Delete Student
 * View Students
-* Search by Roll Number
-* Search by Department
+
 
 ## Faculty Management
 
@@ -85,6 +116,7 @@ The project uses Spring Boot for backend services, ReactJS for frontend developm
 * React Router DOM
 * Axios
 * Recharts
+* Vite
 
 ## Backend
 
@@ -96,12 +128,13 @@ The project uses Spring Boot for backend services, ReactJS for frontend developm
 
 ## Database
 
-* MySQL
+* TiDB Cloud (MySQL Compatible)
 
 ## Face Recognition Module
 
 * Python
 * OpenCV
+* Haar Cascade Classifier
 * LBPH Face Recognizer
 
 ## Development Tools
@@ -115,7 +148,7 @@ The project uses Spring Boot for backend services, ReactJS for frontend developm
 
 ---
 
-## System Architecture Overview
+## 🏗 System Architecture Overview
 
 The Attendance Management System follows a multi-layered architecture consisting of:
 
@@ -123,7 +156,7 @@ The Attendance Management System follows a multi-layered architecture consisting
 2. API Layer (Spring Boot REST APIs)
 3. Business Logic Layer (Service Layer)
 4. Data Access Layer (JPA Repository Layer)
-5. Database Layer (MySQL)
+5. Database Layer (TiDB Cloud)
 6. Face Recognition Layer (Python + OpenCV)
 
 ---
@@ -185,20 +218,13 @@ The Attendance Management System follows a multi-layered architecture consisting
                          | SQL Queries
                          v
 +------------------------------------------------+
-|                  MySQL Database                |
-|------------------------------------------------|
-| students                                        |
-| faculty                                         |
-| subjects                                        |
-| attendance                                      |
-| attendance_prediction                           |
-| users                                           |
+|             TiDB Cloud Database                |
 +------------------------------------------------+
 ```
 
 ---
 
-## Face Recognition Architecture
+## 🤖 Face Recognition Architecture
 
 ```text
 +----------------------------------+
@@ -236,15 +262,13 @@ The Attendance Management System follows a multi-layered architecture consisting
                 |
                 v
 +----------------------------------+
-|          MySQL Database          |
-|----------------------------------|
-| Attendance Records Stored        |
+|      TiDB Cloud Database         |
 +----------------------------------+
 ```
 
 ---
 
-## Authentication Flow
+## 🔐 Authentication Flow
 
 ```text
 User Login
@@ -271,9 +295,8 @@ Protected API Access
 
 ---
 
-## Attendance Prediction Flow
+##  📊 Attendance Prediction Flow
 
-```text
 Student Attendance Records
             |
             v
@@ -339,9 +362,9 @@ Download File
 
 ---
 
-## Dashboard Analytics Flow
+## 📈 Dashboard Analytics Flow
 
-```text
+
 Students Data
 Faculty Data
 Subjects Data
@@ -361,30 +384,30 @@ React Dashboard Charts
 
 ---
 
-## Database Relationships
+## 🗄 Database Relationships
 
-```text
-Student
-   |
-   | One Student
-   |
-   |<---------------------+
-   |                      |
-   v                      |
-Attendance                |
-   ^                      |
-   |                      |
-   | Many Attendance      |
-   |                      |
-Subject ------------------+
 
 Student
    |
    | One Student
    |
    v
+Attendance
+   ^
+   |
+   | Many Attendance
+   |
+Subject
+
+Student
+   |
+   v
 Attendance Prediction
-```
+
+User
+   |
+   v
+Authentication
 
 ### Entity Relationships
 
@@ -400,7 +423,7 @@ User (1) ------ Authentication & Authorization
 
 ---
 
-# API Modules
+# 📡 API Modules
 
 ## Authentication APIs
 
@@ -566,31 +589,24 @@ GET /api/face/status
 
 ---
 
-# Database Configuration
+# ⚙️ Database Configuration
 
-Database Name:
-
-attendance_db
-
-Update application.properties:
-
-spring.datasource.url=jdbc:mysql://localhost:3306/attendance_db
-
-spring.datasource.username=root
-
+spring.datasource.url=YOUR_DATABASE_URL
+spring.datasource.username=YOUR_USERNAME
 spring.datasource.password=YOUR_PASSWORD
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
 
 ---
 
-# Installation Guide
+# 🚀 Installation Guide
 
 ## Backend
 
-Open backend folder:
+.\mvnw.cmd spring-boot:run
 
-mvn clean install
-
-mvn spring-boot
+.\mvnw.cmd clean install
 
 Backend URL:
 
@@ -632,17 +648,31 @@ python recognize.py
 
 ---
 
-# Future Enhancements
+## 📂 Project Structure
 
-* Real-Time Camera Streaming
-* Student Portal
-* Faculty Portal
-* Mobile Application
-* Cloud Deployment
-* Advanced AI Prediction Models
-* Email Notification System
-* Attendance Trend Forecasting
-* Dark Mode
+Attendance-Management-System
+│
+├── backend
+├── frontend
+├── database
+├── face-recognition-module
+├── screenshots
+├── README.md
+└── LICENSE
+
+---
+
+# 🔮 Future Enhancements
+
+Real-Time Camera Streaming
+Student Portal
+Faculty Portal
+Mobile Application
+Email Notification System
+Advanced AI Prediction Models
+Attendance Trend Forecasting
+Cloud Storage Integration
+Dark Mode
 
 
 ---
@@ -653,4 +683,3 @@ Aman Raj
 
 B.Tech Computer Science & Engineering
 
-Smart Attendance Management System
