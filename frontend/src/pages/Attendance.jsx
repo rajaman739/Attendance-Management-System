@@ -310,8 +310,17 @@ function Attendance() {
         } catch (e) { console.error(e); }
     };
 
-    const exportPdf   = () => window.open("http://localhost:8080/api/reports/attendance/pdf",   "_blank");
-    const exportExcel = () => window.open("http://localhost:8080/api/reports/attendance/excel", "_blank");
+const exportPdf = () =>
+    window.open(
+        "https://attendance-backend-0sk5.onrender.com/api/reports/attendance/pdf",
+        "_blank"
+    );
+
+const exportExcel = () =>
+    window.open(
+        "https://attendance-backend-0sk5.onrender.com/api/reports/attendance/excel",
+        "_blank"
+    );
 
     const filteredAttendance = attendance.filter((r) => {
         const matchesSearch  = r.student?.name?.toLowerCase().includes(search.toLowerCase());
