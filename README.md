@@ -8,7 +8,6 @@ It's an AI-Powered Attendance Management System built using React, Spring Boot, 
 
 The system provides modules for student management, faculty management, subject management, attendance tracking, attendance analytics, attendance prediction, report generation, and face-recognition-based attendance marking.
 
-
 ---
 
 # 🚀 Live Deployment
