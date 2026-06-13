@@ -367,7 +367,7 @@ Download File
 
 ## 📈 Dashboard Analytics Flow
 
-
+```text
 Students Data
 Faculty Data
 Subjects Data
