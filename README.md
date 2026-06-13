@@ -1,3 +1,7 @@
+# Test Image
+
+![Test](screenshots/login.png)
+
 🎓 Attendance Management System
 
 ## Overview
